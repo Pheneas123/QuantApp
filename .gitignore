@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+.aws/
+.codex/
+.agents/
+.netlify/
+coverage/
+playwright-report/
+test-results/
+quant-pocket-backup*.json

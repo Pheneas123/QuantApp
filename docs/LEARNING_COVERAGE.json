@@ -1,0 +1,3093 @@
+{
+  "generatedAt": "2026-10-11T21:20:31.463Z",
+  "counts": {
+    "quick": 450,
+    "guided": 6,
+    "guidedParts": 23,
+    "written": 6,
+    "objectives": 102,
+    "prerequisiteEdges": 29,
+    "objectivesWithPrerequisites": 20,
+    "objectivesWithReferences": 78,
+    "mappedQuick": 450
+  },
+  "objectiveCoverage": [
+    {
+      "id": "lo-probability-probability-spaces",
+      "category": "Probability",
+      "subcategories": [
+        "Probability spaces"
+      ],
+      "description": "Use probability axioms and tail-event bounds in a probability model.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-probability-conditional-probability",
+      "category": "Probability",
+      "subcategories": [
+        "Conditional probability"
+      ],
+      "description": "Condition correctly on positive-probability events.",
+      "quick": 4,
+      "guided": 1,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-probability-independence",
+      "category": "Probability",
+      "subcategories": [
+        "Independence"
+      ],
+      "description": "Distinguish pairwise, mutual and conditional independence.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-probability-random-variables",
+      "category": "Probability",
+      "subcategories": [
+        "Random variables"
+      ],
+      "description": "Relate a random variable to its law and transformations.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-probability-common-distributions",
+      "category": "Probability",
+      "subcategories": [
+        "Common distributions"
+      ],
+      "description": "Identify models from support and assumptions.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-probability-expectation",
+      "category": "Probability",
+      "subcategories": [
+        "Expectation"
+      ],
+      "description": "Use expectation, covariance and moment bounds correctly.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-probability-conditional-expectation",
+      "category": "Probability",
+      "subcategories": [
+        "Conditional expectation"
+      ],
+      "description": "Characterise and apply conditional expectation as information projection.",
+      "quick": 8,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 3
+    },
+    {
+      "id": "lo-probability-generating-functions",
+      "category": "Probability",
+      "subcategories": [
+        "Generating functions"
+      ],
+      "description": "Choose PGF, MGF or characteristic function appropriately.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-probability-modes-of-convergence",
+      "category": "Probability",
+      "subcategories": [
+        "Modes of convergence"
+      ],
+      "description": "Distinguish modes and know when expectations converge.",
+      "quick": 8,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 8
+    },
+    {
+      "id": "lo-probability-laws-of-large-numbers",
+      "category": "Probability",
+      "subcategories": [
+        "Laws of large numbers"
+      ],
+      "description": "Select an appropriate law of large numbers.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-probability-central-limit-theorem",
+      "category": "Probability",
+      "subcategories": [
+        "Central limit theorem"
+      ],
+      "description": "Recognise normal limits and their scope.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-probability-concentration-inequalities",
+      "category": "Probability",
+      "subcategories": [
+        "Concentration inequalities"
+      ],
+      "description": "Match a tail bound to its assumptions.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-statistics-estimation",
+      "category": "Statistics",
+      "subcategories": [
+        "Estimation"
+      ],
+      "description": "Compute estimator expectations and assess consistency or risk under a sampling model.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-statistics-bias-variance-and-mse",
+      "category": "Statistics",
+      "subcategories": [
+        "Bias, variance and MSE"
+      ],
+      "description": "Quantify squared-error trade-offs.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-statistics-maximum-likelihood",
+      "category": "Statistics",
+      "subcategories": [
+        "Maximum likelihood"
+      ],
+      "description": "Form and maximise likelihood without dropping support.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-statistics-sufficiency",
+      "category": "Statistics",
+      "subcategories": [
+        "Sufficiency"
+      ],
+      "description": "Separate sufficiency, minimal sufficiency and completeness.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 5
+    },
+    {
+      "id": "lo-statistics-hypothesis-testing",
+      "category": "Statistics",
+      "subcategories": [
+        "Hypothesis testing"
+      ],
+      "description": "Distinguish level, size, power and likelihood-ratio conventions.",
+      "quick": 8,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-statistics-confidence-intervals",
+      "category": "Statistics",
+      "subcategories": [
+        "Confidence intervals"
+      ],
+      "description": "Interpret coverage and construct intervals from pivots.",
+      "quick": 5,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-statistics-regression",
+      "category": "Statistics",
+      "subcategories": [
+        "Regression"
+      ],
+      "description": "Identify OLS assumptions and limitations.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-statistics-bayesian-inference",
+      "category": "Statistics",
+      "subcategories": [
+        "Bayesian inference"
+      ],
+      "description": "Update a prior and choose a decision under stated loss.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-statistics-asymptotic-statistics",
+      "category": "Statistics",
+      "subcategories": [
+        "Asymptotic statistics"
+      ],
+      "description": "Use continuous mapping and delta-method expansions for scaled estimators.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-measure-theory-sigma-algebras",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Sigma-algebras"
+      ],
+      "description": "Recognise generated and product sigma-algebras.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-measure-theory-measures",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Measures"
+      ],
+      "description": "Distinguish finite/sigma-finite/complete measures and extensions.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-measure-theory-measurable-functions",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Measurable functions"
+      ],
+      "description": "Check measurability using inverse images, generators and pointwise limits.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-measure-theory-lebesgue-integration",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Lebesgue integration"
+      ],
+      "description": "Build the integral and recognise legitimate manipulations.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-measure-theory-almost-sure-almost-everywhere-concepts",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Almost sure / almost everywhere concepts"
+      ],
+      "description": "Distinguish null-set equality, completeness and almost uniform convergence.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-measure-theory-convergence-theorems",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Convergence theorems"
+      ],
+      "description": "Choose a convergence theorem and test every assumption.",
+      "quick": 12,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 5
+    },
+    {
+      "id": "lo-measure-theory-product-measures",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Product measures"
+      ],
+      "description": "Construct product measures and interchange integrals lawfully.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-measure-theory-radon-nikodym-theorem",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Radon-Nikodym theorem"
+      ],
+      "description": "Recognise a density between measures and its uniqueness class.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-measure-theory-probability-measures",
+      "category": "Measure Theory",
+      "subcategories": [
+        "Probability measures"
+      ],
+      "description": "Identify probability laws using pushforwards and determining classes.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-processes-general-definitions",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "General definitions"
+      ],
+      "description": "Distinguish time/state modelling, finite-dimensional laws and pathwise equality or regularity.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-processes-filtrations",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Filtrations"
+      ],
+      "description": "Identify which information is available and what measurability is needed.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 4
+    },
+    {
+      "id": "lo-stochastic-processes-random-walks",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Random walks"
+      ],
+      "description": "Use simple random walks as martingale examples.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-stochastic-processes-markov-chains",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Markov chains"
+      ],
+      "description": "Classify states and distinguish stationarity from convergence.",
+      "quick": 8,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 4
+    },
+    {
+      "id": "lo-stochastic-processes-continuous-time-markov-chains",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Continuous-time Markov chains"
+      ],
+      "description": "Translate between jump rates, holding times and transitions.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-processes-poisson-processes",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Poisson processes"
+      ],
+      "description": "Identify counting processes and condition on event counts.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-processes-martingales",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Martingales"
+      ],
+      "description": "Use martingale/submartingale tools with correct moment assumptions.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 7
+    },
+    {
+      "id": "lo-stochastic-processes-stopping-times",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Stopping times"
+      ],
+      "description": "Recognise stopping times and justify optional sampling.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 4
+    },
+    {
+      "id": "lo-stochastic-processes-brownian-motion",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Brownian motion"
+      ],
+      "description": "Relate Brownian paths, increments and stopping behaviour.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-processes-gaussian-processes",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Gaussian processes"
+      ],
+      "description": "Recognise joint Gaussianity and covariance specifications.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-stochastic-processes-birth-death-processes",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Birth-death processes"
+      ],
+      "description": "Check invariant laws and explosion in birth–death models.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-processes-levy-processes",
+      "category": "Stochastic Processes",
+      "subcategories": [
+        "Levy processes"
+      ],
+      "description": "Identify Lévy processes and distinguish diffusion from jump parts.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-stochastic-calculus-brownian-motion-properties",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Brownian motion properties"
+      ],
+      "description": "Use conditional Brownian laws in stochastic-calculus settings.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-stochastic-calculus-quadratic-variation",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Quadratic variation"
+      ],
+      "description": "Compute variation/covariation and distinguish brackets.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-calculus-stochastic-integration",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Stochastic integration"
+      ],
+      "description": "Identify admissible integrands and stochastic integration conventions.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-ito-integral",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Ito integral"
+      ],
+      "description": "Use isometry and distinguish local from true L2 integrals.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 4
+    },
+    {
+      "id": "lo-stochastic-calculus-ito-s-lemma",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Ito's lemma"
+      ],
+      "description": "Apply the stochastic chain rule with the correct correction.",
+      "quick": 5,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-continuous-martingales",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Continuous martingales"
+      ],
+      "description": "Use finite-variation and bracket properties of continuous martingales and represent them by random clocks.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-calculus-local-martingales",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Local martingales"
+      ],
+      "description": "Distinguish local, true and uniformly integrable martingales.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 3
+    },
+    {
+      "id": "lo-stochastic-calculus-semimartingales",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Semimartingales"
+      ],
+      "description": "Decompose continuous semimartingales and apply their stochastic product rule.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-stochastic-differential-equations",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Stochastic differential equations"
+      ],
+      "description": "Recognise and solve elementary SDE models.",
+      "quick": 4,
+      "guided": 1,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-strong-and-weak-solutions",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Strong and weak solutions"
+      ],
+      "description": "Separate prescribed noise from existence in law.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 4
+    },
+    {
+      "id": "lo-stochastic-calculus-existence-and-uniqueness",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Existence and uniqueness"
+      ],
+      "description": "Check sufficient hypotheses for local/global well-posedness.",
+      "quick": 1,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-girsanov-theorem",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Girsanov theorem"
+      ],
+      "description": "Track measure, density, signs and true-martingale conditions.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 2
+    },
+    {
+      "id": "lo-stochastic-calculus-martingale-representation",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Martingale representation"
+      ],
+      "description": "Identify when Brownian representation holds.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-feynman-kac",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Feynman-Kac"
+      ],
+      "description": "Connect a terminal-value PDE and a stochastic representation.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-infinitesimal-generators",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Infinitesimal generators"
+      ],
+      "description": "Distinguish a formal differential expression from an operator.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-stochastic-calculus-kolmogorov-equations",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Kolmogorov equations"
+      ],
+      "description": "Distinguish forward/backward equations and variables.",
+      "quick": 1,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-stochastic-calculus-martingale-problems",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Martingale problems"
+      ],
+      "description": "Identify dynamics through laws and test functions.",
+      "quick": 1,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": true,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-finance-financial-markets-and-instruments",
+      "category": "Finance",
+      "subcategories": [
+        "Financial markets and instruments"
+      ],
+      "description": "Distinguish financial claims and calculate leverage, margin and executable trading cash flows.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-market-microstructure",
+      "category": "Finance",
+      "subcategories": [
+        "Market microstructure"
+      ],
+      "description": "Calculate execution costs and interpret order, inventory and adverse-selection effects under stated conventions.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-bonds-and-fixed-income",
+      "category": "Finance",
+      "subcategories": [
+        "Bonds and fixed income"
+      ],
+      "description": "Price fixed cash flows and calculate yield, duration, convexity and hedge sensitivities.",
+      "quick": 10,
+      "guided": 1,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-loans-and-credit",
+      "category": "Finance",
+      "subcategories": [
+        "Loans and credit"
+      ],
+      "description": "Calculate repayment and contingent credit loss under explicit probability and recovery assumptions.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-forwards-and-futures",
+      "category": "Finance",
+      "subcategories": [
+        "Forwards and futures"
+      ],
+      "description": "Distinguish forward delivery prices, contract values and futures settlement; apply carry and hedging arguments.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-options",
+      "category": "Finance",
+      "subcategories": [
+        "Options"
+      ],
+      "description": "Calculate option payoffs, parity and replication; distinguish exercise and volatility calibration conditions.",
+      "quick": 10,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-swaps-and-other-derivatives",
+      "category": "Finance",
+      "subcategories": [
+        "Swaps and other derivatives"
+      ],
+      "description": "Calculate derivative cash flows and valuation adjustments; distinguish exposure and counterparty dependence.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-portfolio-theory-and-asset-pricing",
+      "category": "Finance",
+      "subcategories": [
+        "Portfolio theory and asset pricing"
+      ],
+      "description": "Calculate return, covariance and risk-adjusted performance; construct portfolio weights under stated constraints.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-financial-risk-management",
+      "category": "Finance",
+      "subcategories": [
+        "Financial risk management"
+      ],
+      "description": "Calculate and interpret loss quantiles, tail averages, stress scenarios and scaling assumptions.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-finance-quantitative-pricing-and-numerical-finance",
+      "category": "Finance",
+      "subcategories": [
+        "Quantitative pricing and numerical finance"
+      ],
+      "description": "Apply replication, numerical pricing and calibration with their modelling and discretisation assumptions.",
+      "quick": 10,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-programming-c-fundamentals",
+      "category": "Programming",
+      "subcategories": [
+        "C++ fundamentals"
+      ],
+      "description": "Trace C++ references, integer arithmetic and const binding under C++20 rules.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-programming-c-stl-and-algorithms",
+      "category": "Programming",
+      "subcategories": [
+        "C++ STL and algorithms"
+      ],
+      "description": "Apply STL range operations and container complexity and invalidation rules.",
+      "quick": 6,
+      "guided": 1,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-programming-c-object-oriented-programming-and-memory",
+      "category": "Programming",
+      "subcategories": [
+        "C++ object-oriented programming and memory"
+      ],
+      "description": "Distinguish polymorphic dispatch, ownership and storage lifetime in C++.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-programming-modern-c",
+      "category": "Programming",
+      "subcategories": [
+        "Modern C++"
+      ],
+      "description": "Trace lambda captures and distinguish owning containers from non-owning C++ views.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-programming-python-fundamentals",
+      "category": "Programming",
+      "subcategories": [
+        "Python fundamentals"
+      ],
+      "description": "Trace Python bindings, iterator consumption, defaults and closure cells.",
+      "quick": 5,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-programming-python-data-structures",
+      "category": "Programming",
+      "subcategories": [
+        "Python data structures"
+      ],
+      "description": "Distinguish container immutability, nested mutability and shallow copying in Python.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-programming-numpy-and-scientific-python",
+      "category": "Programming",
+      "subcategories": [
+        "NumPy and scientific Python"
+      ],
+      "description": "Calculate array broadcasting shapes and distinguish views from materialised arrays.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-programming-algorithms-and-complexity",
+      "category": "Programming",
+      "subcategories": [
+        "Algorithms and complexity"
+      ],
+      "description": "Derive tight asymptotic bounds and amortised costs under a stated access model.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-programming-debugging-and-code-analysis",
+      "category": "Programming",
+      "subcategories": [
+        "Debugging and code analysis"
+      ],
+      "description": "Diagnose index errors and distinguish undefined behaviour from deterministic outputs.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 0
+    },
+    {
+      "id": "lo-programming-numerical-and-quantitative-programming",
+      "category": "Programming",
+      "subcategories": [
+        "Numerical and quantitative programming"
+      ],
+      "description": "Choose stable summation and centred online moment calculations.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-machine-learning-foundations",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Machine learning foundations"
+      ],
+      "description": "Diagnose learning curves and prevent preprocessing leakage across validation boundaries.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-supervised-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Supervised learning"
+      ],
+      "description": "Calculate classification probabilities and ensemble error variance.",
+      "quick": 2,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-machine-learning-unsupervised-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Unsupervised learning"
+      ],
+      "description": "Apply distance-based clustering and maximise projected variance for covariance PCA.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 2
+    },
+    {
+      "id": "lo-machine-learning-optimisation-and-training",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Optimisation and training"
+      ],
+      "description": "Calculate gradient and momentum updates and determine scalar iteration stability.",
+      "quick": 6,
+      "guided": 1,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-neural-networks-and-deep-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Neural networks and deep learning"
+      ],
+      "description": "Apply the chain rule to backpropagation and prevent future-token information flow.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-reinforcement-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Reinforcement learning"
+      ],
+      "description": "Calculate Bellman, Q-learning and SARSA targets under stated policy and termination assumptions.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-probabilistic-and-bayesian-machine-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Probabilistic and Bayesian machine learning"
+      ],
+      "description": "Relate Gaussian MAP penalties and variational evidence bounds to posterior inference.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-time-series-and-sequential-machine-learning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Time series and sequential machine learning"
+      ],
+      "description": "Design chronological validation with causal feature and label information.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-evaluation-and-generalisation",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Evaluation and generalisation"
+      ],
+      "description": "Calculate classification metrics and distinguish model selection from final evaluation.",
+      "quick": 6,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    },
+    {
+      "id": "lo-machine-learning-applied-machine-learning-and-implementation",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Applied machine learning and implementation"
+      ],
+      "description": "Diagnose gradient recording, accumulation, tensor pairing and terminal bootstrap errors.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 1
+    },
+    {
+      "id": "lo-uniform-integrability",
+      "category": "Probability",
+      "subcategories": [
+        "Modes of convergence"
+      ],
+      "description": "Use uniform integrability to distinguish probability convergence from L1 convergence.",
+      "quick": 3,
+      "guided": 0,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-variance-sum",
+      "category": "Probability",
+      "subcategories": [
+        "Expectation"
+      ],
+      "description": "Calculate variance of a linear combination, retaining covariance terms.",
+      "quick": 7,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-storage-lifetime",
+      "category": "Programming",
+      "subcategories": [
+        "C++ object-oriented programming and memory",
+        "Modern C++"
+      ],
+      "description": "Identify non-owning handles whose referenced storage has expired.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 2
+    },
+    {
+      "id": "lo-quadratic-variation",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Quadratic variation"
+      ],
+      "description": "Compute quadratic variation and separate it from its expectation.",
+      "quick": 6,
+      "guided": 1,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-ito-transform",
+      "category": "Stochastic Calculus",
+      "subcategories": [
+        "Ito's lemma",
+        "Stochastic differential equations"
+      ],
+      "description": "Apply the second-derivative correction when transforming a Brownian SDE.",
+      "quick": 8,
+      "guided": 2,
+      "written": 1,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 1
+    },
+    {
+      "id": "lo-statistical-information",
+      "category": "Statistics",
+      "subcategories": [
+        "Estimation",
+        "Maximum likelihood"
+      ],
+      "description": "Calculate scalar Fisher information and regular unbiased-estimation lower bounds.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 2
+    },
+    {
+      "id": "lo-regularised-linear-models",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Supervised learning",
+        "Optimisation and training"
+      ],
+      "description": "Differentiate penalised linear losses, solve ridge systems and analyse coupled quadratic training stability.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 1
+    },
+    {
+      "id": "lo-gaussian-conditioning",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Probabilistic and Bayesian machine learning"
+      ],
+      "description": "Calculate latent Gaussian posterior moments and diagnose induced conditional dependence.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 1
+    },
+    {
+      "id": "lo-cpp-value-semantics",
+      "category": "Programming",
+      "subcategories": [
+        "Modern C++",
+        "C++ object-oriented programming and memory"
+      ],
+      "description": "Trace copies, moves, forwarding and callable ownership under C++20 value-category rules.",
+      "quick": 4,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 2
+    },
+    {
+      "id": "lo-neural-layer-analysis",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Neural networks and deep learning"
+      ],
+      "description": "Derive convolution shapes and parameter counts, dropout moments and multiclass loss gradients.",
+      "quick": 3,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 2
+    },
+    {
+      "id": "lo-policy-gradient",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Reinforcement learning"
+      ],
+      "description": "Derive finite-action score-function gradients and check unbiased-baseline conditions.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 2,
+      "references": 1
+    },
+    {
+      "id": "lo-linear-time-series",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Time series and sequential machine learning"
+      ],
+      "description": "Calculate causal autoregressive forecasts and interpret stability using consistent root conventions.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 1,
+      "references": 1
+    },
+    {
+      "id": "lo-distance-based-prediction",
+      "category": "Machine Learning",
+      "subcategories": [
+        "Supervised learning",
+        "Unsupervised learning"
+      ],
+      "description": "Analyse feature scaling in nearest-neighbour prediction and mean updates in Euclidean clustering.",
+      "quick": 2,
+      "guided": 0,
+      "written": 0,
+      "recognitionOnly": false,
+      "prerequisites": 0,
+      "references": 1
+    }
+  ],
+  "sections": [
+    {
+      "category": "Probability",
+      "subcategory": "Probability spaces",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Conditional probability",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 1,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Independence",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Random variables",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Common distributions",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Expectation",
+      "questions": 3,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Conditional expectation",
+      "questions": 8,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 8,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 7,
+        "hard": 0
+      },
+      "referenceLinked": 8
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Generating functions",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Modes of convergence",
+      "questions": 8,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 8,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 5,
+        "hard": 1
+      },
+      "referenceLinked": 8
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Laws of large numbers",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Central limit theorem",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Probability",
+      "subcategory": "Concentration inequalities",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Estimation",
+      "questions": 5,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Bias, variance and MSE",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Maximum likelihood",
+      "questions": 7,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 7,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Sufficiency",
+      "questions": 7,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 7,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 6,
+        "hard": 0
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Hypothesis testing",
+      "questions": 8,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 8,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 5,
+        "hard": 1
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Confidence intervals",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Regression",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Bayesian inference",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Statistics",
+      "subcategory": "Asymptotic statistics",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Sigma-algebras",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Measures",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Measurable functions",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 4,
+        "medium": 0,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Lebesgue integration",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Almost sure / almost everywhere concepts",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Convergence theorems",
+      "questions": 13,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 12,
+        "guided": 0,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 8,
+        "hard": 2
+      },
+      "referenceLinked": 13
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Product measures",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Radon-Nikodym theorem",
+      "questions": 7,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 7,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Measure Theory",
+      "subcategory": "Probability measures",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "General definitions",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Filtrations",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Random walks",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Markov chains",
+      "questions": 8,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 8,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 8
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Continuous-time Markov chains",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Poisson processes",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Martingales",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 2
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Stopping times",
+      "questions": 7,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 7,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 2
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Brownian motion",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Gaussian processes",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Birth-death processes",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Stochastic Processes",
+      "subcategory": "Levy processes",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Brownian motion properties",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 0,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Quadratic variation",
+      "questions": 6,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Stochastic integration",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 5,
+        "hard": 0
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Ito integral",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Ito's lemma",
+      "questions": 6,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 1,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 2,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Continuous martingales",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 2
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Local martingales",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 2,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Semimartingales",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Stochastic differential equations",
+      "questions": 6,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 1,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Strong and weak solutions",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 2,
+        "hard": 1
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Existence and uniqueness",
+      "questions": 1,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 1,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Girsanov theorem",
+      "questions": 3,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 3,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 2
+      },
+      "referenceLinked": 3
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Martingale representation",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 2
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Feynman-Kac",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 1
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Infinitesimal generators",
+      "questions": 2,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 2,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 2
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Kolmogorov equations",
+      "questions": 1,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 1,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Stochastic Calculus",
+      "subcategory": "Martingale problems",
+      "questions": 1,
+      "objectives": 1,
+      "weakCoverage": true,
+      "modes": {
+        "quick": 1,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1
+      },
+      "referenceLinked": 1
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Financial markets and instruments",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 6,
+        "hard": 1
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Market microstructure",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 6,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Bonds and fixed income",
+      "questions": 11,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 1,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 4,
+        "medium": 7,
+        "hard": 0
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Loans and credit",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 4,
+        "medium": 6,
+        "hard": 0
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Forwards and futures",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 5,
+        "hard": 2
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Options",
+      "questions": 11,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 7,
+        "hard": 1
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Swaps and other derivatives",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 4,
+        "medium": 6,
+        "hard": 0
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Portfolio theory and asset pricing",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 5,
+        "hard": 2
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Financial risk management",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 4,
+        "hard": 3
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Finance",
+      "subcategory": "Quantitative pricing and numerical finance",
+      "questions": 10,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 10,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 4,
+        "medium": 4,
+        "hard": 2
+      },
+      "referenceLinked": 0
+    },
+    {
+      "category": "Programming",
+      "subcategory": "C++ fundamentals",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Programming",
+      "subcategory": "C++ STL and algorithms",
+      "questions": 7,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 1,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 6,
+        "hard": 0
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Programming",
+      "subcategory": "C++ object-oriented programming and memory",
+      "questions": 6,
+      "objectives": 3,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Modern C++",
+      "questions": 5,
+      "objectives": 3,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 3,
+        "hard": 2
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Python fundamentals",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 5,
+        "hard": 0
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Python data structures",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Programming",
+      "subcategory": "NumPy and scientific Python",
+      "questions": 6,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 5,
+        "hard": 0
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Algorithms and complexity",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Debugging and code analysis",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Programming",
+      "subcategory": "Numerical and quantitative programming",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 3,
+        "hard": 1
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Machine learning foundations",
+      "questions": 4,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Supervised learning",
+      "questions": 6,
+      "objectives": 3,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 1
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Unsupervised learning",
+      "questions": 4,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 3,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Optimisation and training",
+      "questions": 7,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 1,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 5,
+        "hard": 1
+      },
+      "referenceLinked": 7
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Neural networks and deep learning",
+      "questions": 5,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 5,
+        "hard": 0
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Reinforcement learning",
+      "questions": 6,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 6,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 4,
+        "hard": 1
+      },
+      "referenceLinked": 6
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Probabilistic and Bayesian machine learning",
+      "questions": 4,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Time series and sequential machine learning",
+      "questions": 4,
+      "objectives": 2,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 4,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 0,
+        "medium": 4,
+        "hard": 0
+      },
+      "referenceLinked": 4
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Evaluation and generalisation",
+      "questions": 5,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 5,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 3,
+        "medium": 2,
+        "hard": 0
+      },
+      "referenceLinked": 5
+    },
+    {
+      "category": "Machine Learning",
+      "subcategory": "Applied machine learning and implementation",
+      "questions": 7,
+      "objectives": 1,
+      "weakCoverage": false,
+      "modes": {
+        "quick": 7,
+        "guided": 0,
+        "written": 0
+      },
+      "difficulty": {
+        "easy": 1,
+        "medium": 6,
+        "hard": 0
+      },
+      "referenceLinked": 7
+    }
+  ],
+  "families": {
+    "fair-bit-parity": [
+      "prob-009",
+      "prob-ce-nonnested-tower"
+    ],
+    "variance-transfer": [
+      "prob-013",
+      "fin-portfolio-variance",
+      "fin-pricing-antithetic",
+      "ml-forest-correlation"
+    ],
+    "ui-l1": [
+      "prob-006",
+      "process-028"
+    ],
+    "escaping-mass": [
+      "prob-023",
+      "measure-005"
+    ],
+    "bounded-stopping": [
+      "process-006",
+      "process-021",
+      "process-continuous-sampling-bound"
+    ],
+    "expired-storage": [
+      "prog-dangling-reference",
+      "prog-span-lifetime"
+    ]
+  },
+  "unmapped": [],
+  "unassessedObjectives": [],
+  "recognitionOnly": [
+    "lo-stochastic-processes-general-definitions",
+    "lo-stochastic-processes-birth-death-processes",
+    "lo-stochastic-calculus-strong-and-weak-solutions",
+    "lo-stochastic-calculus-existence-and-uniqueness",
+    "lo-stochastic-calculus-kolmogorov-equations",
+    "lo-stochastic-calculus-martingale-problems"
+  ]
+}

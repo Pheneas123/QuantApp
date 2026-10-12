@@ -1,0 +1,48 @@
+{
+  "name": "quant-pocket",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "npm run validate:bank && npm run validate:learning && tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "validate:bank": "node --import tsx scripts/validate-bank.ts",
+    "audit:bank": "node --import tsx scripts/audit-bank.ts",
+    "test:pwa": "npm run build && node --import tsx scripts/verify-pwa.mjs",
+    "test:setup": "npm run build && node --import tsx scripts/verify-session-setup.mjs",
+    "test:feedback": "npm run build && node --import tsx scripts/verify-feedback.mjs",
+    "test:bank": "npm run build && node --import tsx scripts/verify-bank.mjs",
+    "test:reference": "npm run build && node --import tsx scripts/verify-reference.mjs",
+    "test:finance": "npm run build && node --import tsx scripts/verify-finance.mjs",
+    "test:code": "node --import tsx scripts/verify-code.ts",
+    "test:stage1": "npm run build && node --import tsx scripts/verify-stage1.mjs",
+    "validate:learning": "node --import tsx scripts/validate-learning.ts",
+    "coverage:learning": "node --import tsx scripts/coverage.ts",
+    "test:learning": "npm run build && node --import tsx scripts/verify-learning.mjs",
+    "test:learning-code": "node --import tsx scripts/verify-learning-code.ts",
+    "test:stage2-code": "node --import tsx scripts/verify-stage2-code.ts",
+    "test:stage2": "npm run build && node --import tsx scripts/verify-stage2.mjs",
+    "validate:pages": "node scripts/validate-pages.mjs",
+    "test:pages": "npm run build && npm run validate:pages && node --import tsx scripts/verify-pages.mjs"
+  },
+  "dependencies": {
+    "highlight.js": "^11.12.0",
+    "katex": "^0.16.22",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "playwright": "^1.63.0",
+    "tsx": "^4.19.4",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^1.0.0"
+  }
+}
