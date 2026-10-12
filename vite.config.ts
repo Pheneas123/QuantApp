@@ -14,7 +14,7 @@ export default defineConfig({
       id: base,
       name: 'QuantApp',
       short_name: 'QuantApp',
-      description: 'Probability and stochastic mathematics questions.',
+      description: 'Study mathematics, quantitative finance, programming and machine learning.',
       lang: 'en',
       theme_color: '#141618',
       background_color: '#141618',
