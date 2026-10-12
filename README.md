@@ -1,34 +1,68 @@
-# QuantPocket
+# QuantApp
 
-A mobile-first, local-first study PWA for mathematics, quantitative finance, programming and machine learning. React 19, TypeScript, Vite 6, KaTeX and `vite-plugin-pwa`; no backend, account or cloud synchronisation. The existing dark interface and state-based navigation are preserved, with wider study panels on tablets.
+QuantApp is a local-first study application for mathematics, quantitative finance, programming and machine learning. It runs entirely in the browser, with no account or backend, and can be installed for offline study.
 
-[STATUS.md](STATUS.md) is the current numbered overview. Historical status and its maintenance convention are in [docs/status/README.md](docs/status/README.md). Hosting is configured for GitHub Pages at **https://pheneas123.github.io/QuantApp/**, from the public `Pheneas123/QuantApp` repository. See [deployment status](STATUS.md) for verified publication and [deployment instructions](DEPLOYMENT.md) for setup, publishing and progress transfer.
+**[Open QuantApp](https://pheneas123.github.io/QuantApp/)** · **[GitHub repository](https://github.com/Pheneas123/QuantApp)**
 
-## Run and verify
+## What you can study
 
-Use Node.js 22 or newer. `npm run dev` prints the development URL; `npm run preview` serves the production build. No environment file or backend is required.
+The curriculum covers eight categories: Probability, Statistics, Measure Theory, Stochastic Processes, Stochastic Calculus, Finance, Programming and Machine Learning. It includes 450 multiple-choice questions, 6 Guided Problems with 23 parts, 6 Written Problems, 170 Reference entries and 102 learning objectives.
+
+- **Quick Practice:** choose categories, subcategories, difficulty and session length. Practise all or unseen questions, review incorrect or unsure answers, or filter by flags and due reviews. Answers receive explanations and links to related Reference entries.
+- **Guided Problems:** work through ordered parts using immediate learning feedback or assessment feedback at completion. Interrupted attempts, answer order and hint use are saved for resuming.
+- **Written Problems:** write plain text, maths or code, preview your work, reveal a worked solution and record your own assessment. Drafts save as you type.
+- **Reference and objectives:** browse concepts, formulas and code examples, inspect prerequisites and practise foundations. Objective progress distinguishes assessed answers, hint assistance and self-reported results.
+
+Progressive hints are available where supplied. Flags and spaced repetition work across all practice modes. History shows attempts and provides backup export/import. The header logo returns to the home screen from every mode while retaining saved answers, drafts, flags and review schedules. Unfinished Quick Practice sessions are kept in memory only.
+
+Maths renders with KaTeX. Code supports local syntax highlighting for Python, C++, JavaScript and TypeScript; long lines scroll within their blocks. Written answers are self-assessed, without automatic proof grading or code execution.
+
+## Run locally
+
+Use Node.js 22 or newer. No environment file, API key or external service is required.
 
 ```sh
 npm ci
 npm run dev
-npm test
-npm run validate:bank
-npm run validate:learning
-npm run coverage:learning
-npm run audit:bank
-npm run test:code
-npm run test:learning-code
+```
+
+Open the local URL printed by Vite. To preview a production build:
+
+```sh
 npm run build
 npm run preview
 ```
 
-Production browser checks: `test:setup`, `test:feedback`, `test:bank`, `test:finance`, `test:reference`, `test:stage1`, `test:pwa`, `test:learning`, `test:stage2`, `test:pages`. Built asset check: `validate:pages`. New compiler/numerical checks: `test:stage2-code`. They build first. With a system browser, use `PWA_CHROMIUM=/usr/bin/chromium PWA_NO_SANDBOX=1`; Python/NumPy and g++ are needed for the reviewed code checks. `node --import tsx --test --test-isolation=none tests/*.test.ts` reports individual unit cases. There is no standalone lint script.
+The application uses React, TypeScript, Vite and `vite-plugin-pwa`. Development uses `/` as its base. For a preview matching this repository's GitHub Pages path:
 
-## Publish through GitHub Pages
+```sh
+PAGES_BASE_PATH=/QuantApp/ npm run build
+npm run validate:pages
+npm run preview
+```
 
-Pushes to `main` run [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml): install dependencies, run tests, validate/type-check/build, upload `dist`, and deploy with official Pages Actions. The workflow reads the Pages base path from `configure-pages`; no repository name is hardcoded in Vite or the workflow.
+Open the preview URL with `/QuantApp/` appended. Navigation stays in React state at this single entry URL, so GitHub Pages needs no server rewrites or additional routing dependency. Refresh opens the home screen; saved Guided sessions and Written drafts can then be resumed.
 
-One-time setup: in **Settings → Pages**, select **GitHub Actions** as the source. Allow official Actions and deployments from `main` in the `github-pages` environment. No deployment secrets are required.
+## Checks
+
+```sh
+npm test
+npm run build
+npm run validate:pages
+npm run test:pages
+npm run test:learning
+npm run test:pwa
+```
+
+The build validates both question banks, runs TypeScript checking and creates `dist`. There is no standalone lint command. `validate:pages` checks asset, manifest and service-worker paths. `test:pages` uses a strict static server to check repository paths, direct visits, refreshes, offline loading and accessible home navigation from all modes. Learning tests cover persistence, backups, flags, review schedules and interrupted work; PWA tests cover offline use and updates.
+
+Browser checks require Playwright Chromium (`npx playwright install chromium`) or a system browser. In environments that require it, use `PWA_CHROMIUM=/usr/bin/chromium PWA_NO_SANDBOX=1` before the command. Run browser suites sequentially.
+
+Additional scripts cover session setup, feedback, Reference navigation, the question bank and reviewed code examples; see `package.json`. Code execution checks require Python/NumPy and g++. `npm run coverage:learning` generates ignored JSON and Markdown reports under `docs/`.
+
+## Publish changes
+
+The public repository is `Pheneas123/QuantApp`, with `main` as the deployment branch. From an existing checkout:
 
 ```sh
 npm test
@@ -41,54 +75,46 @@ git commit -m "Describe the change"
 git push origin main
 ```
 
-Watch the workflow until deployment succeeds, then check **https://pheneas123.github.io/QuantApp/**. Complete initial-repository commands and local subpath previews are in [DEPLOYMENT.md](DEPLOYMENT.md). Environment files, private keys and local credential directories are ignored; review staged files before committing.
+For a new checkout:
 
-Navigation stays in React state on the single `/QuantApp/` entry URL, so direct visits and refreshes need no server rewrites. The logo shares an accessible home action across Quick, Guided and Written views, preserving saved work. Refresh opens home; saved Guided sessions and Written drafts can be resumed.
+```sh
+git clone https://github.com/Pheneas123/QuantApp.git
+cd QuantApp
+npm ci
+```
 
-Before changing hosts, export progress from the old origin and import it on the new site. Storage keys stay unchanged, but browser security prevents automatic cross-origin transfer. The deployment guide includes a backup method for older releases without export controls.
+Every push to `main` runs [the deployment workflow](.github/workflows/deploy-pages.yml). It installs locked dependencies, runs unit tests, validates and type-checks the production build, checks Pages asset paths, uploads `dist` and deploys through the official GitHub Pages Actions. The workflow gets the repository base path from `configure-pages`; Vite and the workflow do not hardcode an owner or repository name. It can also be started manually from the Actions tab.
 
-## Study modes
+One-time repository configuration:
 
-All modes share the eight-category curriculum and difficulty controls. Stage 2 brings the MCQ bank to **450**: 50 per non-Finance category and the preserved 100 Finance records. There are **6 Guided Problems with 23 parts**, **6 Written Problems**, **170 Reference entries**, and **102 learning objectives with 29 prerequisite links**. The existing [800-question roadmap](CURRICULUM_EXPANSION.md) has reached 450 locally; future stages reach 625 → 800.
+1. In **Settings > Pages**, choose **GitHub Actions** as the build and deployment source. This is configured for the current repository.
+2. Allow the official GitHub Actions used by the workflow. The `github-pages` environment must allow deployments from `main`.
+3. If copying this project to another repository, enable Pages there and confirm the URL reported by the deployment job.
 
-**Quick Practice** retains category/subcategory/difficulty, Practice / Review Incorrect / Review Unsure / Unseen Only, 10/25/50/all session sizes, one-time question/choice shuffling, Submit / Not sure, locked feedback, Reference return, history and reset. Latest outcome determines review membership; answer accuracy excludes unsure. Canonical grading and legacy history remain intact. New Flagged and Due for Review filters are independent of those existing modes. 118 Stage 2 questions and one original demonstration have progressive hints; zero-hint questions remain valid. Quick unfinished sessions retain their existing in-memory behaviour.
+The workflow grants read access to source content, Pages deployment access and an OpenID Connect token. No deployment secret is required. Environment files, credentials, generated builds and local backup files are ignored; review staged changes before committing.
 
-**Guided Problems** keep an overarching statement accessible while advancing through 3–4 meaningful parts. Learning feedback follows each part; Assessment feedback follows explicit final completion. Submitted parts cannot change and future answers remain hidden. Each attempt is one problem with part-level evidence, a final summary and a full solution. Answer orders, hint counts and interrupted state are saved and can be resumed from the problem list. Retry creates a new attempt.
+The expected site URL is **https://pheneas123.github.io/QuantApp/**. Check the Actions run and the published site after a push before treating that release as deployed.
 
-**Written Problems** provide a plain-text editor, LaTeX/code preview, progressive hints and immediate local drafts. Enter nonempty work before explicitly revealing the full solution. Correct / Partially Correct / Incorrect / Not Sure are labelled self-reported assessments. Completed answers remain in history; current drafts survive refresh. No arbitrary proof grading or code execution is performed.
+## Progress, backups and offline use
 
-Flag/unflag controls appear on all items. Use each mode’s Flagged filter to study them; History also lists retained flags, including unavailable content. Objective panels expose prerequisites, Reference links and a way to practise foundations. Objective progress shows attempts, unique items, observed assessed successes, hint assistance, written self-reports and insufficient evidence; it never labels a single guess as mastery.
+All progress is stored in this browser under versioned `quantapp.*` keys. This rename deliberately starts a fresh progress store: previous application keys and old backup formats are not migrated or accepted. Existing data in other namespaces is left untouched. Question content is unchanged.
 
-## Rendering and controls
+Export a backup from History to save current QuantApp progress. Import validates the file, previews its contents and defaults to merging with local data; replacement requires additional confirmation. Backups include Quick and Guided attempts, Written attempts and drafts, flags, schedules and resumable Guided sessions. Changing browsers, devices or hosting origins requires exporting and importing a current QuantApp backup. There is no account recovery or cloud synchronisation.
 
-The shared renderer accepts plain text, inline/block KaTeX, line-delimited fenced code and simple pipe tables. Syntax highlighting supports Python, C++, JavaScript and TypeScript aliases with four selectively imported local grammars; unknown languages remain literal. Code characters/indentation are preserved and long lines scroll inside their block. Written previews and long solutions use the same renderer. New mode and highlighting chunks are precached, including before their first use.
+Review scheduling is deterministic and inspired by SM-2: unaided successes increase intervals, while incorrect, unsure, partial or hint-assisted results return to one-day review. Written self-assessments retain their distinct provenance. See [storage and review policy](docs/LEARNING_STORAGE.md) for namespaces, validation, reset scope and failure handling.
 
-Keyboard controls: 1–4 or A–D select MCQ choices; Enter submits/advances; N advances submitted parts; H reveals the next hint; F toggles a flag; U retains Quick Practice’s Not sure; ? opens help; Esc closes dialogs. Editing fields, composition, modifier shortcuts, disabled actions and repeat submissions are protected. Written solutions require their explicit reveal action. Mouse and touch controls remain available.
+Offline caching is enabled in production. After an online load has installed the service worker, application code, content, fonts and maths rendering are cached. Updates are offered outside active practice. Install through your browser's installation controls; on iPhone, use Safari's **Share > Add to Home Screen**. Browser or operating-system storage eviction can remove offline content or progress, so retain backups.
 
-## Progress and backups
+Keyboard controls include 1–4 or A–D for choices, Enter to submit or advance, N to advance submitted parts, H for hints, F for flags, U for Quick Practice's Not sure, ? for help and Escape to close dialogs. The header home button supports Tab, Enter and Space. Editing fields retain their normal keyboard behaviour.
 
-The unchanged **`quant-pocket.attempts.v1`** accepts both old boolean and current result-based Quick records, preserving old records verbatim. New learning data uses separate versioned namespaces; no legacy attempts are migrated or historically regraded. [Storage documentation](docs/LEARNING_STORAGE.md) lists the exact keys, validation, failure handling, merge/replacement semantics and reset scope.
+## Project structure and content
 
-History offers local export/import. Import validates the whole file, previews counts and defaults to merge. Replacement additionally confirms destruction. Backups include attempts, drafts, flags, schedules and Guided interrupted state. Stored data remains browser/origin-local; keep backups because there is no account recovery. Read/write failures are surfaced, and malformed new storage is left untouched. localStorage is not transactional across tabs.
+- `src/features/quick-practice/`: question bank, sessions, grading, filters and history.
+- `src/features/learning/`: Guided and Written practice, objectives, storage, backups and scheduling.
+- `src/features/reference/` and `src/data/knowledge/`: Reference library and browsing.
+- `src/data/`: shared curriculum and study metadata.
+- `src/components/`: shared maths/code rendering, hints, flags and accessibility controls.
+- `tests/` and `scripts/`: content validation, unit tests and browser verification.
+- `vite.config.ts` and `.github/workflows/deploy-pages.yml`: build, offline caching and deployment.
 
-Review scheduling is deterministic and SM-2-inspired: unaided success intervals are 1 day, 6 days, then rounded prior interval × ease; incorrect, unsure, partial or hint-assisted results reset to one day. Written self-report provenance stays distinct. Guided review schedules the entire problem. UTC elapsed-day calculations avoid daylight-saving ambiguity; Due for Review supplements the existing practice/review controls. Details and limitations are in [the review policy](docs/LEARNING_STORAGE.md).
-
-## Content and architecture
-
-[CONTENT_AUTHORING.md](docs/CONTENT_AUTHORING.md) provides complete templates for each mode, objectives/prerequisites, hints, References, difficulty and independent mathematical/programming checks. Runtime schemas plus build-time validation check static banks. [Coverage reports](docs/LEARNING_COVERAGE.md) distinguish question counts from assessed competencies and expose gaps and overlap. Some initial objectives span related skills; a mapping does not prove every component is covered.
-
-- `src/data/curriculum.ts`, `studyMetadata.ts`: shared taxonomy and optional educational metadata.
-- `src/features/quick-practice/`: preserved MCQ session, grading, filters, history and bank.
-- `src/features/learning/data/`: objective registry, reviewed MCQ mappings and new problem banks.
-- `src/features/learning/schema.ts`, `guidedSession.ts`: validated content and ordered session transitions.
-- `src/features/learning/storage.ts`, `scheduling.ts`: versioned persistence, backups, review events and objective evidence.
-- `src/features/learning/{PracticeHub,GuidedStudy,WrittenStudy}.tsx`: new modes, loaded separately.
-- `src/data/knowledge/`, `src/features/reference/`: shared Reference library and existing browsing flow.
-- `src/components/`: shared maths/code/table renderer, hints, flags, prerequisite tools and keyboard help.
-- `src/style.css`, `vite.config.ts`: existing visual language, responsive widths and offline precaching.
-
-Academic changes and per-item difficulty decisions are in [AUDIT_REMEDIATION.md](docs/AUDIT_REMEDIATION.md). The independent audit is preserved unchanged as historical evidence; the remediation report records implemented decisions and remaining execution/calibration limits. [Stage 2 review and verification](docs/STAGE_2_REVIEW.md) distinguishes unit/browser tests, numerical/compiler checks and unverified device behaviour.
-
-## Install and offline use
-
-Development mode does not enable offline caching. Use a production preview on localhost or an HTTPS installation. All static content, lazy code, KaTeX and fonts are precached. New releases offer an update outside active Quick/Guided/Written study. On iPhone, open the HTTPS site in Safari, Share → Add to Home Screen, allow installation online and verify reopening with networking disabled. See [DEPLOYMENT.md](DEPLOYMENT.md). Real-device Safari/OS eviction checks are separate from Chromium viewport tests.
+[Content authoring](docs/CONTENT_AUTHORING.md) explains question templates, assumptions, difficulty, hints, references and mathematical/programming review. Required review fixtures remain alongside the tests; generated reports and historical status documents are excluded from the repository.

@@ -25,12 +25,12 @@ try {
     if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth+1)) overflow.push({ n, width:320, phase:'feedback' });
     assert.equal(await page.locator('.katex-error').count(), 0);
     try { await page.getByRole('button', { name: 'Next', exact: true }).click(); } catch (error) {
-      console.error('Bank failure at',n,await page.evaluate(()=>JSON.parse(localStorage.getItem('quant-pocket.attempts.v1')).at(-1).questionId));
+      console.error('Bank failure at',n,await page.evaluate(()=>JSON.parse(localStorage.getItem('quantapp.attempts.v1')).at(-1).questionId));
       console.error(await page.getByRole('button',{name:'Next',exact:true}).evaluate(el=>{const r=el.getBoundingClientRect();return {rect:r.toJSON(),scroll:scrollY,hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.outerHTML.slice(0,300)};}));
       await page.screenshot({path:'/tmp/quant-bank-failure.png',fullPage:true});throw error;
     }
   }
-  const attempts = await page.evaluate(() => JSON.parse(localStorage.getItem('quant-pocket.attempts.v1')));
+  const attempts = await page.evaluate(() => JSON.parse(localStorage.getItem('quantapp.attempts.v1')));
   const problems=overflow.map(entry=>({...entry,id:attempts[entry.n].questionId}));
   assert.deepEqual(problems, [], JSON.stringify(problems));
   assert.equal(new Set(attempts.map(a=>a.questionId)).size, questions.length);

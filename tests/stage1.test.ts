@@ -147,6 +147,6 @@ test('new categories preserve canonical grading, all review modes and legacy his
     assert.ok(eligibleQuestions(questions, { ...filters, mode: 'unseen' }, []).some(item => item.id === q.id));
   }
   assert.equal(changeCategory(questions, { ...defaultFilters, category: 'Programming', subcategory: 'Modern C++' }, 'Machine Learning').subcategory, 'All');
-  assert.equal(STORAGE_KEY, 'quant-pocket.attempts.v1');
+  assert.equal(STORAGE_KEY, 'quantapp.attempts.v1');
   assert.deepEqual(additions, original);
 });

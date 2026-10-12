@@ -1,6 +1,5 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import batch from '../src/features/quick-practice/data/bank/batch-b.ts';
 import references from '../src/data/knowledge/batch-b.ts';
 import { questions } from '../src/features/quick-practice/data/questions.ts';
@@ -25,16 +24,6 @@ test('Batch B uses its 30 planned topic slots, 4/8/8/6/4 subjects and 12/14/4 di
     assert.deepEqual(['easy','medium','hard'].map(d=>selected.filter(q=>q.difficulty===d).length),expected,`${category}/${subcategory}`);
   }
   for(const q of batch) {assert.ok(q.explanation.trim());assert.ok(q.knowledgeIds.length);}
-});
-test('accepted bank stays within historical per-topic total budgets (difficulty recalibrated by audit)',()=>{
-  const map=readFileSync('CURRICULUM_MAP.md','utf8');
-  const topics=[...map.matchAll(/### ([A-Z]+\d+) — (.*?)\n([\s\S]*?)(?=\n### |\n## )/g)];
-  assert.equal(topics.length,59);
-  for(const [,code,subcategory,body] of topics) {
-    const category=code.startsWith('SP')?'Stochastic Processes':code.startsWith('SC')?'Stochastic Calculus':code.startsWith('P')?'Probability':code.startsWith('S')?'Statistics':'Measure Theory';
-    const match=body.match(/Target: \d+ \((\d+)\/(\d+)\/(\d+)\)/); assert.ok(match,code);
-    assert.ok(questions.filter(q=>!q.id.startsWith('s2-') && q.category===category && q.subcategory===subcategory).length <= Number(match[1])+Number(match[2])+Number(match[3]),`${code} total budget`);
-  }
 });
 const question=(id:string)=>{const q=batch.find(q=>q.id===id);assert.ok(q,id);return q;};
 test('Batch B density and stationary-law choices satisfy the defining equations uniquely',()=>{

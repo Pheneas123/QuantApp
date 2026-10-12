@@ -15,7 +15,7 @@ import { defaultFilters, eligibleQuestions } from '../src/features/quick-practic
 import { parseAttempts } from '../src/features/quick-practice/progress';
 import { updateSchedule, objectiveEvidence, type ReviewEvent } from '../src/features/learning/scheduling';
 const baseline = JSON.parse(readFileSync('tests/fixtures/stage2-baseline.json', 'utf8'));
-const ledger = JSON.parse(readFileSync('docs/STAGE_2_REVIEW_LEDGER.json', 'utf8'));
+const ledger = JSON.parse(readFileSync('tests/fixtures/stage2-review-ledger.json', 'utf8'));
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const q = (slug: string) => { const item = stage2Questions.find(q => q.id === 's2-' + slug); assert.ok(item, slug); return item; };
 const correct = (slug: string) => { const item = q(slug); return item.answers[item.correctAnswer]; };

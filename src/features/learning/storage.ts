@@ -2,9 +2,9 @@ import { parseAttempts, STORAGE_KEY } from '../quick-practice/progress';
 import { itemKey, studyModes, type ItemIdentity } from './schema';
 import { updateSchedule, type ReviewEvent, type ReviewSchedule } from './scheduling';
 export const keys = {
- guided:'quant-pocket.guided-attempts.v1', written:'quant-pocket.written-attempts.v1',
- drafts:'quant-pocket.written-drafts.v1', flags:'quant-pocket.flags.v1',
- schedules:'quant-pocket.review-schedules.v1', active:'quant-pocket.guided-session.v1',
+ guided:'quantapp.guided-attempts.v1', written:'quantapp.written-attempts.v1',
+ drafts:'quantapp.written-drafts.v1', flags:'quantapp.flags.v1',
+ schedules:'quantapp.review-schedules.v1', active:'quantapp.guided-session.v1',
 } as const;
 export type LearningKey = typeof keys[keyof typeof keys];
 export type SelfAssessment = 'correct'|'partial'|'incorrect'|'unsure';
@@ -77,14 +77,14 @@ export function recordReview(event:ReviewEvent,storage:StorageLike=localStorage)
  upsert(keys.schedules,updateSchedule(prior,event),storage);
 }
 export const allEvents=(schedules:ReviewSchedule[])=>schedules.flatMap(s=>s.events);
-export interface Backup {format:'quant-pocket-backup';version:1;exportedAt:string;data:Record<string,unknown>}
+export interface Backup {format:'quantapp-backup';version:1;exportedAt:string;data:Record<string,unknown>}
 export const backupKeys=[STORAGE_KEY,...Object.values(keys)];
 export function exportBackup(storage:StorageLike=localStorage):Backup {
  const data:Record<string,unknown>={};for(const key of backupKeys) {const raw=storage.getItem(key);data[key]=raw===null?null:JSON.parse(raw);}
- const b:Backup={format:'quant-pocket-backup',version:1,exportedAt:new Date().toISOString(),data};validateBackup(b);return b;
+ const b:Backup={format:'quantapp-backup',version:1,exportedAt:new Date().toISOString(),data};validateBackup(b);return b;
 }
 export function validateBackup(value:unknown):asserts value is Backup {
- if(!obj(value)||value.format!=='quant-pocket-backup'||value.version!==1||!date(value.exportedAt)||!obj(value.data)||Object.keys(value.data).some(k=>!backupKeys.includes(k))||backupKeys.some(k=>!Object.hasOwn(value.data,k)))throw Error('Invalid or unsupported backup');
+ if(!obj(value)||value.format!=='quantapp-backup'||value.version!==1||!date(value.exportedAt)||!obj(value.data)||Object.keys(value.data).some(k=>!backupKeys.includes(k))||backupKeys.some(k=>!Object.hasOwn(value.data,k)))throw Error('Invalid or unsupported backup');
  for(const key of backupKeys){const v=value.data[key];if(v===null)continue;
   if(key===STORAGE_KEY){const attempts=parseAttempts(JSON.stringify(v));if(new Set(attempts.map(a=>a.id)).size!==attempts.length)throw Error('Duplicate attempts');}
   else if(!obj(v)||v.version!==1||!Array.isArray(v.records)||!v.records.every((r:unknown)=>validRecord(key as LearningKey,r))||new Set(v.records.map((r:LearningRecord)=>r.id)).size!==v.records.length)throw Error(`Invalid backup records: ${key}`);

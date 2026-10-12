@@ -180,6 +180,6 @@ test('every Finance item grades canonical answers across shuffles and retains al
   }
   const switched = changeCategory(questions, { ...defaultFilters, category: 'Finance', subcategory: curriculum.Finance[0], difficulty: 'hard', mode: 'unsure' }, 'Statistics');
   assert.deepEqual(switched, { category: 'Statistics', subcategory: 'All', difficulty: 'hard', mode: 'unsure' });
-  assert.equal(STORAGE_KEY, 'quant-pocket.attempts.v1');
+  assert.equal(STORAGE_KEY, 'quantapp.attempts.v1');
   assert.deepEqual(finance, snapshot);
 });

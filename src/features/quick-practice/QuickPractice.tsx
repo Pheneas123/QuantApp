@@ -62,7 +62,7 @@ export function QuickPractice({ updateAvailable, onUpdate }: { updateAvailable: 
   try{localStorage.removeItem(STORAGE_KEY);canSave.current=true;setAttempts([]);setStorageError('');}
   catch{setStorageError('Progress could not be reset on this device. Your history has been kept.');}
  }
- return <div className="app"><header><button type="button" className="brand" onClick={goHome} aria-label="QuantPocket home"><span className="brand-icon" aria-hidden="true">∑</span>QuantPocket</button><ShortcutsHelp/></header>
+ return <div className="app"><header><button type="button" className="brand" onClick={goHome} aria-label="QuantApp home"><span className="brand-icon" aria-hidden="true">∑</span>QuantApp</button><ShortcutsHelp/></header>
  {storageError&&<aside className="notice error" role="alert">{storageError}</aside>}
  {updateAvailable&&screen!=='quiz'&&!learningActive&&<aside className="notice">A new version is available. <button onClick={onUpdate}>Update app</button></aside>}
  <main>{!reference&&screen!=='quiz'&&!learningActive&&<fieldset><legend>Practice format</legend><div className="difficulty format-controls">{(['quick','guided','written'] as const).map(m=><button key={m} aria-pressed={studyMode===m} className={studyMode===m?'active':''} onClick={()=>{setStudyMode(m);setScreen('home');setObjectiveFilter(undefined);}}>{modeLabels[m]}</button>)}</div></fieldset>}

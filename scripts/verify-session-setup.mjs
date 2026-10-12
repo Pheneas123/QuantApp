@@ -47,7 +47,7 @@ try {
     { id: 'old-2', questionId: 'calc-002', selectedAnswer: 0, correct: true, at: '2026-10-06T11:00:00Z' },
     { id: 'old-3', questionId: 'calc-004', selectedAnswer: 0, correct: false, at: '2026-10-06T12:00:00Z' },
   ];
-  await page.evaluate(history => localStorage.setItem('quant-pocket.attempts.v1', JSON.stringify(history)), legacy);
+  await page.evaluate(history => localStorage.setItem('quantapp.attempts.v1', JSON.stringify(history)), legacy);
   await page.reload();
   await page.getByRole('button', { name: `Stochastic Calculus ${count('Stochastic Calculus')} questions` }).click();
   await subcategory.selectOption('Brownian motion properties');
@@ -66,7 +66,7 @@ try {
   await page.getByRole('button', { name: 'Mixed', exact: true }).click();
   await mode.getByRole('button', { name: 'Practice', exact: true }).click();
   await session.getByRole('button', { name: '10', exact: true }).click();
-  const readHistory = () => page.evaluate(() => JSON.parse(localStorage.getItem('quant-pocket.attempts.v1')));
+  const readHistory = () => page.evaluate(() => JSON.parse(localStorage.getItem('quantapp.attempts.v1')));
   assert.deepEqual(await readHistory(), legacy);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   await start.click();
@@ -127,7 +127,7 @@ try {
   assert.deepEqual(await page.locator('.stats dd').allTextContents(), ['0', '0', '0', String(total), '0%']);
 
   // Explicit reset also permits recovery from unreadable stored history.
-  await page.evaluate(() => localStorage.setItem('quant-pocket.attempts.v1', 'invalid'));
+  await page.evaluate(() => localStorage.setItem('quantapp.attempts.v1', 'invalid'));
   await page.reload();
   await page.getByRole('button', { name: 'History', exact: true }).click();
   page.once('dialog', dialog => dialog.accept());

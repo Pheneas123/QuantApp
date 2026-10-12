@@ -23,16 +23,19 @@ const server=createServer(async(req,res)=>{
  }catch{res.writeHead(404).end();}
 });
 await new Promise(done=>server.listen(0,'127.0.0.1',done));
-const origin=`http://127.0.0.1:${server.address().port}`,entry=origin+base;
+const published=process.env.PUBLISHED_SITE_URL;
+const origin=published?new URL(published).origin:`http://127.0.0.1:${server.address().port}`;
+const entry=published??origin+base;
+assert.equal(new URL(entry).pathname,base,'Published URL must match the built base');
 let browser;
 try{
  browser=await chromium.launch({headless:true,executablePath:process.env.PWA_CHROMIUM||undefined,args:process.env.PWA_NO_SANDBOX==='1'?['--no-sandbox']:[]});
  const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage(),errors=[],failed=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)failed.push(r.url());});
- const button=name=>page.getByRole('button',{name,exact:true}),brand=()=>button('QuantPocket home');
+ const button=name=>page.getByRole('button',{name,exact:true}),brand=()=>button('QuantApp home');
  const format=name=>page.getByRole('group',{name:'Practice format',exact:true}).getByRole('button',{name,exact:true}).click();
  const records=key=>page.evaluate(key=>JSON.parse(localStorage.getItem(key))?.records??[],key);
- const snapshot=()=>page.evaluate(()=>Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('quant-pocket.')).sort().map(k=>[k,localStorage.getItem(k)])));
+ const snapshot=()=>page.evaluate(()=>Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('quantapp.')).sort().map(k=>[k,localStorage.getItem(k)])));
  async function home(before,activation='click'){
   assert.equal(await brand().evaluate(el=>el.tagName),'BUTTON');assert.equal(await brand().evaluate(el=>el.tabIndex),0);
   if(activation==='icon')await page.locator('.brand-icon').click();
@@ -48,10 +51,10 @@ try{
  assert.equal(await page.locator('.brand').getAttribute('class'),'brand');
  const legacy={id:'legacy-pages',questionId:'prob-001',selectedAnswer:1,correct:true,at:'2026-10-01T12:00:00Z'};
  const seeded=[legacy,...questions.filter(q=>q.id!=='prob-001'&&q.id!=='calc-003').map(q=>({id:'seed-'+q.id,questionId:q.id,selectedAnswer:q.correctAnswer,correct:true,at:'2026-10-01T12:00:00Z'}))];
- await page.evaluate(attempts=>localStorage.setItem('quant-pocket.attempts.v1',JSON.stringify(attempts)),seeded);await page.reload();
+ await page.evaluate(attempts=>localStorage.setItem('quantapp.attempts.v1',JSON.stringify(attempts)),seeded);await page.reload();
  await button('Unseen Only').click();await button('Start').click();await button('Reveal next hint (0/2)').click();await button('Flag for later').click();await page.locator('.answer').first().click();await button('Submit').click();
  assert.equal((await records(keys.schedules)).length,1);await home(await snapshot(),'icon');
- assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('quant-pocket.attempts.v1'))[0]),legacy);
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('quantapp.attempts.v1'))[0]),legacy);
 
  const gp=guidedProblems[0];await format('Guided Problems');await button(gp.title).click();await home(await snapshot()); // Introduction also exits.
  await format('Guided Problems');await button(gp.title).click();await button('Start problem').click();
@@ -80,7 +83,7 @@ try{
  await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();assert.ok(await page.evaluate(()=>!!navigator.serviceWorker.controller));
  const registration=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return {scope:r.scope,script:r.active.scriptURL};});assert.equal(registration.scope,entry);assert.equal(registration.script,entry+'sw.js');
  for(const icon of manifest.icons)assert.equal((await context.request.get(origin+icon.src)).status(),200);
- if(base!=='/')assert.equal((await context.request.get(origin+'/icon-192.png')).status(),404,'root paths must not be used by a repository build');
+ if(base!=='/'&&!published)assert.equal((await context.request.get(origin+'/icon-192.png')).status(),404,'root paths must not be used by a repository build');
  await context.setOffline(true);assert.equal((await page.reload()).status(),200);await page.getByRole('heading',{name:'Progress',exact:true}).waitFor();assert.deepEqual(await snapshot(),persisted);
  await format('Guided Problems');await button(gp.title+' · Resume / review').click();assert.equal(await page.locator('.answer:disabled').count(),4);await home(await snapshot());
  await format('Written Problems');await button(wp.title).click();assert.equal(await page.locator('#written-answer').inputValue(),answer);await home(await snapshot(),'Enter');

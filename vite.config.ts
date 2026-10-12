@@ -12,8 +12,8 @@ export default defineConfig({
     includeAssets: ['apple-touch-icon.png'],
     manifest: {
       id: base,
-      name: 'QuantPocket',
-      short_name: 'QuantPocket',
+      name: 'QuantApp',
+      short_name: 'QuantApp',
       description: 'Probability and stochastic mathematics questions.',
       lang: 'en',
       theme_color: '#141618',

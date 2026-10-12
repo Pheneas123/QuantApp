@@ -13,7 +13,7 @@ try {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
   await page.goto(server.resolvedUrls.local[0]);
-  await page.evaluate(ids => localStorage.setItem('quant-pocket.attempts.v1', JSON.stringify(ids.map((questionId, i) => ({ id: `seed-${i}`, questionId, correct: true, selectedAnswer: 0, at: new Date().toISOString() })))), questions.filter(q => q.id !== 'calc-002').map(q => q.id));
+  await page.evaluate(ids => localStorage.setItem('quantapp.attempts.v1', JSON.stringify(ids.map((questionId, i) => ({ id: `seed-${i}`, questionId, correct: true, selectedAnswer: 0, at: new Date().toISOString() })))), questions.filter(q => q.id !== 'calc-002').map(q => q.id));
   await page.reload();
   await page.getByRole('button', { name: 'Unseen Only', exact: true }).click();
   const nav = page.getByRole('navigation', { name: 'Main navigation' });
@@ -25,7 +25,7 @@ try {
   const answers = await page.locator('.answer').allTextContents();
   const question = await page.locator('.question').innerText();
   await page.getByRole('button', { name: 'Not sure', exact: true }).click();
-  const saved = await page.evaluate(() => localStorage.getItem('quant-pocket.attempts.v1'));
+  const saved = await page.evaluate(() => localStorage.getItem('quantapp.attempts.v1'));
   const variation = knowledge.find(k => k.id === 'def-quadratic-variation');
   await page.getByRole('button', { name: variation.name, exact: true }).click();
   await page.getByRole('heading', { name: variation.name, exact: true }).waitFor();
@@ -41,7 +41,7 @@ try {
   const returned = await page.locator('.answer').allTextContents();
   answers.forEach((answer, i) => assert.ok(returned[i].includes(answer)));
   assert.equal(await page.locator('.answer:disabled').count(), 4);
-  assert.equal(await page.evaluate(() => localStorage.getItem('quant-pocket.attempts.v1')), saved);
+  assert.equal(await page.evaluate(() => localStorage.getItem('quantapp.attempts.v1')), saved);
   await page.getByRole('button', { name: 'Next', exact: true }).click();
   await page.getByRole('heading', { name: 'Session complete', exact: true }).waitFor();
   await nav.getByRole('button', { name: 'Reference', exact: true }).click();

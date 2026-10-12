@@ -10,10 +10,10 @@ import { chromium } from 'playwright';
 import { questions } from '../src/features/quick-practice/data/questions.ts';
 
 const source = resolve('dist');
-const scratch = await mkdtemp(resolve(tmpdir(), 'quantpocket-pwa-'));
+const scratch = await mkdtemp(resolve(tmpdir(), 'quantapp-pwa-'));
 const deployed = resolve(scratch, 'site');
 const profile = resolve(scratch, 'profile');
-const storageKey = 'quant-pocket.attempts.v1';
+const storageKey = 'quantapp.attempts.v1';
 let context;
 let server;
 const errors = [];

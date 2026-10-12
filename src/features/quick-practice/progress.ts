@@ -9,7 +9,7 @@ export type SubmittedAttempt = AttemptMetadata & (
 type LegacyAttempt = AttemptMetadata & { correct: boolean; selectedAnswer: number; displayedAnswer?: number; result?: never };
 export type QuickPracticeAttempt = SubmittedAttempt | LegacyAttempt;
 export type QuickPracticeStatus = 'unseen' | AttemptResult;
-export const STORAGE_KEY = 'quant-pocket.attempts.v1';
+export const STORAGE_KEY = 'quantapp.attempts.v1';
 export function attemptResult(attempt: QuickPracticeAttempt): AttemptResult {
   return attempt.result ?? (('correct' in attempt && attempt.correct) ? 'correct' : 'incorrect');
 }

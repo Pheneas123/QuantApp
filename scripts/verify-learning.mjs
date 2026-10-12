@@ -17,7 +17,7 @@ try {
  async function widths(label){for(const width of [320,390,768,1024,1280]){await page.setViewportSize({width,height:width===768?1024:width===1024?768:900});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${label} overflow ${width}`);assert.equal(await page.locator('.katex-error').count(),0,label);if(label==='written-student-interval draft'&&[390,768,1024].includes(width))await page.screenshot({path:`/tmp/quant-written-${width}.png`,fullPage:true});}await page.setViewportSize({width:390,height:844});}
  await widths('Quick setup');
  const legacy={id:'legacy-learning',questionId:'prob-001',at:'2026-10-01T12:00:00Z',selectedAnswer:1,correct:true};
- await page.evaluate(legacy=>localStorage.setItem('quant-pocket.attempts.v1',JSON.stringify([legacy])),legacy);await page.reload();
+ await page.evaluate(legacy=>localStorage.setItem('quantapp.attempts.v1',JSON.stringify([legacy])),legacy);await page.reload();
  await format('Guided Problems');await widths('Guided setup');
  for(let n=0;n<guidedProblems.length;n++){
   const p=guidedProblems[n];await button(p.title).click();await widths(p.id+' introduction');
@@ -65,14 +65,14 @@ try {
  // Explicit prerequisite practice opens the MCQ objective filter without altering history.
  await format('Guided Problems');await page.getByRole('button',{name:'Solving multiplicative Brownian noise · Resume / review',exact:true}).click();await page.getByText('Learning objectives and prerequisites',{exact:true}).click();await page.getByRole('button',{name:'Practise this foundation',exact:true}).first().click();await page.getByText('Filtered by learning objective.',{exact:false}).waitFor();await button('Clear objective filter').click();
  // Isolate a hinted Quick Practice item while keeping a legacy record verbatim.
- const q=questions.find(q=>q.id==='calc-003');await page.evaluate(({questions,legacy})=>localStorage.setItem('quant-pocket.attempts.v1',JSON.stringify([legacy,...questions.filter(q=>q.id!=='calc-003'&&q.id!==legacy.questionId).map(q=>({id:'seed-'+q.id,questionId:q.id,at:'2026-10-01T12:00:00Z',selectedAnswer:0,correct:true}))])),{questions,legacy});await page.reload();
+ const q=questions.find(q=>q.id==='calc-003');await page.evaluate(({questions,legacy})=>localStorage.setItem('quantapp.attempts.v1',JSON.stringify([legacy,...questions.filter(q=>q.id!=='calc-003'&&q.id!==legacy.questionId).map(q=>({id:'seed-'+q.id,questionId:q.id,at:'2026-10-01T12:00:00Z',selectedAnswer:0,correct:true}))])),{questions,legacy});await page.reload();
  await page.getByRole('group',{name:'Mode',exact:true}).getByRole('button',{name:'Unseen Only',exact:true}).click();await button('Start').click();await page.locator('h1.question').focus();await page.keyboard.press('h');await page.keyboard.press('f');assert.equal(await page.locator('.hints p').count(),1);
  await widths('Quick question');await page.locator(`.answer[data-answer-index="${q.correctAnswer}"]`).click();await button('Submit').click();await widths('Quick feedback');const schedule=(await records(keys.schedules)).find(s=>s.mode==='quick'&&s.itemId===q.id);assert.equal(schedule.events[0].hints,1);assert.equal(schedule.successes,0);
  await page.locator('.related-concepts button').first().click();await widths('Reference reading');await button('Back to Quick Practice').click();assert.equal(await page.locator('.answer:disabled').count(),4);assert.equal(await page.locator('.hints p').count(),1,'revealed Quick hints survive Reference return');
  await page.keyboard.press('?');await page.getByRole('dialog',{name:'Keyboard shortcuts',exact:true}).waitFor();await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);
- await button('End session').click();await page.getByRole('navigation').getByRole('button',{name:'History',exact:true}).click();assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('quant-pocket.attempts.v1'))[0]),legacy);
+ await button('End session').click();await page.getByRole('navigation').getByRole('button',{name:'History',exact:true}).click();assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('quantapp.attempts.v1'))[0]),legacy);
  await button('Export progress').click();
- const backup=await page.evaluate(keys=>{const data={};for(const k of ['quant-pocket.attempts.v1',...Object.values(keys)])data[k]=JSON.parse(localStorage.getItem(k));return {format:'quant-pocket-backup',version:1,exportedAt:new Date().toISOString(),data};},keys);
+ const backup=await page.evaluate(keys=>{const data={};for(const k of ['quantapp.attempts.v1',...Object.values(keys)])data[k]=JSON.parse(localStorage.getItem(k));return {format:'quantapp-backup',version:1,exportedAt:new Date().toISOString(),data};},keys);
  await page.locator('input[type=file]').setInputFiles({name:'backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(backup))});await page.getByRole('heading',{name:'Review restoration',exact:true}).waitFor();await button('Confirm restoration').click();await page.getByText('Backup restored.',{exact:true}).waitFor();
  assert.equal((await records(keys.written)).length,6);
  // Replacement requires an explicit confirmation; cancelling preserves data.

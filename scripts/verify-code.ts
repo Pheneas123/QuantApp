@@ -61,7 +61,7 @@ assert np.mean((pred - target.reshape(3, 1)) ** 2) == 0
 print('PASS')`]);
 assert.equal(scientific.status, 0, scientific.stderr);
 
-const scratch = mkdtempSync(join(tmpdir(), 'quantpocket-code-'));
+const scratch = mkdtempSync(join(tmpdir(), 'quantapp-code-'));
 const headers = '#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <memory>\n#include <span>\n#include <limits>\n';
 try {
   const outputs: [string, string][] = [

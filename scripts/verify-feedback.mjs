@@ -9,7 +9,7 @@ try {
   browser=await chromium.launch({headless:true,executablePath:process.env.PWA_CHROMIUM||undefined,args:process.env.PWA_NO_SANDBOX==='1'?['--no-sandbox']:[]});
   const page=await browser.newPage({viewport:{width:390,height:844}});
   const errors=[]; page.on('pageerror',e=>errors.push(e.message));
-  const key='quant-pocket.attempts.v1';
+  const key='quantapp.attempts.v1';
   const legacy=[
     {id:'old1',at:'2026-10-06T10:00:00Z',questionId:'calc-001',selectedAnswer:0,correct:true},
     {id:'old2',at:'2026-10-06T11:00:00Z',questionId:'calc-002',selectedAnswer:0,correct:false},

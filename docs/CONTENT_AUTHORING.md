@@ -1,6 +1,8 @@
 # Learning content authoring
 
-QuantPocket uses one taxonomy (`src/data/curriculum.ts`), one escaped prose/maths/code renderer (`MathText`) and three content contracts. Add content to data modules; components and storage do not need changing for each exercise. Follow [the content standard](../CONTENT_STYLE.md). Stage 2 is implemented at 450 MCQs; the future roadmap is 625 → 800. See [its review](STAGE_2_REVIEW.md). Append subject arrays under `bank/stage2/`, explicit mappings/objectives in the learning data registry, and directly supporting entries in `knowledge/stage2.ts`; preserve existing records and IDs. Run `test:stage2-code` and the production `test:stage2` suite for the addition checks.
+QuantApp uses one taxonomy (`src/data/curriculum.ts`), one escaped prose/maths/code renderer (`MathText`) and three content contracts. Add content to data modules and explicit objective mappings; components and storage do not need changing for each exercise. Preserve stable IDs, canonical answers and existing progress. The current bank has 450 MCQs, six Guided Problems and six Written Problems.
+
+Use British English, explicit mathematical/programming assumptions, plausible distractors and independently checked explanations. Keep language/API identifiers literal. Difficulty follows reasoning demand; specialised terminology does not make recognition Hard. New concepts need directly supporting Reference links.
 
 ## Shared metadata and objectives
 
@@ -39,7 +41,7 @@ const example = {
 // quickMappings['prob-constant-expectation-example'] = { objectiveIds: ['lo-probability-expectation'] };
 ```
 
-All four choices must be distinct and exactly one mathematically defensible answer must remain under the standalone prompt’s assumptions. Big-O questions should ask for a tightest bound when larger bounds are also true. Canonical indices stay fixed; UI answer orders are shuffled. The existing bank guide remains [here](../src/features/quick-practice/data/README.md).
+All four choices must be distinct and exactly one mathematically defensible answer must remain under the standalone prompt’s assumptions. Big-O questions should ask for a tightest bound when larger bounds are also true. Canonical indices stay fixed; UI answer orders are shuffled.
 
 ## Guided Problem template
 
@@ -128,8 +130,8 @@ npm run build
 PWA_CHROMIUM=/usr/bin/chromium PWA_NO_SANDBOX=1 npm run test:learning
 ```
 
-The production build automatically validates both content systems. `coverage:learning` writes [JSON](LEARNING_COVERAGE.json) and [Markdown](LEARNING_COVERAGE.md) reports by mode, category/subsection, difficulty, objective, references, prerequisites and families. It reports unmapped items, unassessed objectives, recognition-only objectives and weak subsections. The recognition classification is a conservative question-type heuristic, not a semantic proof.
+The production build automatically validates both content systems. `coverage:learning` generates ignored JSON and Markdown reports under `docs/` by mode, category/subsection, difficulty, objective, references, prerequisites and families. It reports unmapped items, unassessed objectives, recognition-only objectives and weak subsections. The recognition classification is a conservative question-type heuristic, not a semantic proof.
 
 Run relevant existing production browser scripts after a build: `verify-session-setup.mjs`, `verify-feedback.mjs`, `verify-bank.mjs`, `verify-finance.mjs`, `verify-reference.mjs`, `verify-stage1.mjs`, `verify-pwa.mjs`. Package `test:*` aliases include their own build. The new browser suite exercises all example content, five viewport widths, draft/reload, keyboard guards, flags, due reviews, backups and offline use. Real-device Safari testing remains separate.
 
-Before finalising content, record changed IDs and rationale, independent numerical/compiler checks and any unexecuted examples. Review coverage rather than filling counts with reskins. Archive outgoing status using [the status convention](status/README.md). Commit, push and deployment require explicit authorisation.
+Before finalising content, record changed IDs and rationale, independent numerical/compiler checks and any unexecuted examples. Review coverage rather than filling counts with reskins. Commit, push and deployment require explicit authorisation.

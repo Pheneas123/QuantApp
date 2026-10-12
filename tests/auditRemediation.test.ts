@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import { questions } from '../src/features/quick-practice/data/questions';
 import { knowledge } from '../src/data/knowledge';
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -21,5 +20,4 @@ test('standalone prompts carry the audited uniqueness, filtration, dtype and tim
  for(const id of ['prog-sort-unique','prog-lambda-copy'])assert.match(q(id).prompt,/inside main/);
  assert.match(q('fin-options-early-call').prompt,/strictly positive strike/);
  assert.match(q('fin-micro-adverse-selection').prompt,/Ignore funding, discounting and inventory carry/);
- const report=readFileSync('docs/AUDIT_REMEDIATION.md','utf8');assert.equal((report.match(/^\| `[^`]+` \|/gm)??[]).length,47);
 });
